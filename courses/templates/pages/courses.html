@@ -1,0 +1,30 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			MTFuture | Home 
+		</title>
+		<meta charset = 'utf-8'>
+		<meta name = 'viewport'  content='width=device-width, initial-scale=1.0'>
+		<link rel = 'stylesheet'  href = "{%static 'css/style.css'%}">
+		<link rel = 'icon'  href = "{%static 'imgs/logo.png'%}"  type='img/png'>
+	</head>
+	
+	<body dir = 'rtl'>
+		<div class = 'main_header'>
+			
+		</div>
+		<h1 class = 'mainh1'> Master Your Future </h1>
+		<div class = 'gird-container'>
+			{%for course in courses%}
+			<a href = '/courses/{{course.id}}' style="height:100%">
+				<div style="height:100%;">
+					<img src = "{{course.img.url}}">
+					<h2> {{course.title}} </h2>
+				</div>
+			</a>
+			{%endfor%}
+		</div>
+	</body>
+</html>

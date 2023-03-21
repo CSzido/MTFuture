@@ -1,0 +1,24 @@
+{%load static%}
+<html>
+	<head>
+		<title> MTFuture | Quiz </title>
+		<meta charset = 'utf-8'>
+		<meta name = 'viewport'  content='width=device-width, initial-scale=1.0'>
+		<link rel = 'stylesheet'  href = "{%static 'css/style.css'%}">
+		<link rel = 'icon'  href = "{%static 'imgs/logo.png'%}"  type='img/png'>
+	</head>
+
+	<body dir = 'rtl'>
+		<form class = 'quiz'  enctype="multipart/form-data" method="POST">
+			{%csrf_token%}
+			<h1 class = 'q'>{{question.question}} </h1>
+			<div class = 'answer'>
+				<input name = 'option'  type = 'radio' value="{{question.op1}}"> {{question.op1}}
+				<input name = 'option'  type = 'radio' value="{{question.op2}}"> {{question.op2}}
+				<input name = 'option'  type = 'radio' value="{{question.op3}}"> {{question.op3}}
+				<input name = 'option'  type = 'radio' value="{{question.op4}}">{{question.op4}}
+			</div>
+			<button type="submit" class = 'submit-btn'> تأكيد! </button>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn MTFuture.wsgi --log-file -

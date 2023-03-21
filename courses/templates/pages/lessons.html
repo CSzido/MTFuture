@@ -1,0 +1,39 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			MTFuture | Course name 
+		</title>
+		<meta charset = 'utf-8'>
+		<meta name = 'viewport'  content='width=device-width, initial-scale=1.0'>
+		<link rel = 'stylesheet'  href = "{%static 'css/style.css'%}">
+		<link rel = 'icon'  href = "{%static 'imgs/logo.png'%}"  type='img/png'>
+	</head >
+	
+	<body dir = 'rtl'>
+		<div class = 'main_header'>
+		
+		</div>
+		<h1 class = 'mainh1'> {{level.name}} </h1>
+		<div class = 'gird-container'>
+			{%for lesson in lessons%}
+			{%if lesson in user.profile.lessons.all%}
+			<a href = '/lesson/{{lesson.id}}' style="height:100%;">
+				<div style="height:100%">
+					<img src = '{{lesson.img.url}}'>
+					<h2> {{lesson.title}} </h2>
+				</div>
+			</a>
+			{%else%}
+			<a style="height:100%;">
+				<div style="height:100%">
+					<img src = "{%static 'imgs/lock.jpg'%}">
+					<h2> {{lesson.title}} </h2>
+				</div>
+			</a>
+			{%endif%}
+			{%endfor%}
+		</div>
+	</body>
+</html>

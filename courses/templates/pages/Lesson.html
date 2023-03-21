@@ -1,0 +1,20 @@
+{%load static%}
+<html>
+	<head>
+		<title>MTFutuer | lesson </title >
+		<meta charset = 'utf-8'>
+		<meta name = 'viewport'  content='width=device-width, initial-scale=1.0'>
+		<link rel = 'stylesheet'  href = "{%static 'css/style.css'%}">
+		<link rel = 'icon'  href = "{%static 'imgs/logo.png'%}"  type='img/png'>
+	</head>
+	
+	<body>
+		<iframe width = '100%'  height = '100%'  src = '{{lesson.url}}'  title="{{lesson.title}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		<a href = '/'> <button class = 'browse'> تصفح الدورات </button> </a>
+		{%if lesson.has_next%}
+			<a href = '/lesson/{{lesson.nxt.id}}'> <button class = 'next'> التالي </button> </a>
+		{%else%}
+			<a href = '/level/{{lesson.level.id}}/quiz'> <button class = 'next'> اختبار </button> </a>
+		{%endif%}
+	</body>
+</html>
