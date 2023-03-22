@@ -110,3 +110,8 @@ a{
 	font-size:30px;
 	color:white;
 }
+@media screen and (max-width: 620px) {
+  .gird-container > a div h2 {
+  	font-size:17px;
+	}
+}
