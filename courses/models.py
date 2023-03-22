@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Course(models.Model):
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now=True)
     img = models.ImageField(upload_to="course_covers")
     title = models.CharField(max_length=500)
     def __str__(self):
@@ -13,7 +13,7 @@ class Course(models.Model):
 
 
 class Level(models.Model):
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now=True)
     name = models.CharField(max_length=500)
     img = models.ImageField(upload_to="level_covers")
     nxt = models.ForeignKey("Level", on_delete=models.CASCADE, null=True, blank=True)
@@ -26,7 +26,7 @@ class Level(models.Model):
 
 
 class Lesson(models.Model):
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=500)
     img = models.ImageField(upload_to="Lesson_covers")
     url = models.URLField()
