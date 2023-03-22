@@ -7,6 +7,9 @@ class Course(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     img = models.ImageField(upload_to="course_covers")
     title = models.CharField(max_length=500)
+    def __str__(self):
+        return str(self.title)
+
 
 
 class Level(models.Model):
