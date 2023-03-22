@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'MTFuture.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'HOST': 'containers-us-west-52.railway.app',
+        'USER': 'postgres',
+        'PASSWORD':'K6B3qjl69k6GeaHJct5B',
+        'PORT':'7560'
     }
 }
 
