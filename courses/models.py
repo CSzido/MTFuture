@@ -23,7 +23,8 @@ class Level(models.Model):
 
     def __str__(self):
         return str(self.name)
-
+    class Meta:
+        ordering=["date"]
 
 class Lesson(models.Model):
     date = models.DateTimeField(auto_created=True)
@@ -37,7 +38,8 @@ class Lesson(models.Model):
 
     def __str__(self):
         return str(self.title)
-
+    class Meta:
+        ordering = ["date"]
 
 class Question(models.Model):
     question = models.CharField(max_length=500)
@@ -47,6 +49,5 @@ class Question(models.Model):
     op2 = models.CharField(max_length=500)
     op3 = models.CharField(max_length=500)
     op4 = models.CharField(max_length=500)
-
     def __str__(self):
         return str(self.question)
