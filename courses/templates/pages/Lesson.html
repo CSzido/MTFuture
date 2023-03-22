@@ -14,7 +14,9 @@
 		{%if lesson.has_next%}
 			<a href = '/lesson/{{lesson.nxt.id}}'> <button class = 'next'> التالي </button> </a>
 		{%else%}
+			{%if video.nxt != ""%}
 			<a href = '/level/{{lesson.level.id}}/quiz'> <button class = 'next'> اختبار </button> </a>
+			{%endif%}
 		{%endif%}
 	</body>
 </html>
