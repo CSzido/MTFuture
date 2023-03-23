@@ -12,8 +12,8 @@
 		<iframe width = '100%'  height = '100%'  src = '{{lesson.url}}'  title="{{lesson.title}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 		<a href = '/'> <button class = 'browse'> تصفح الدورات </button> </a>
 		{%if lesson.has_next%}
-			{%if video.nxt%}
-			<a href = '/lesson/{{lesson.nxt.id}}'> <button class = 'next'> التالي </button> </a>
+			{%if video.nxt.exists%}
+				<a href = '/lesson/{{lesson.nxt.id}}'> <button class = 'next'> التالي </button> </a>
 			{%endif%}
 		{%else%}
 			<a href = '/level/{{lesson.level.id}}/quiz'> <button class = 'next'> اختبار </button> </a>

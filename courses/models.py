@@ -16,7 +16,7 @@ class Level(models.Model):
     date = models.DateTimeField(auto_created=True)
     name = models.CharField(max_length=500)
     img = models.ImageField(upload_to="level_covers")
-    nxt = models.ForeignKey("Level", on_delete=models.CASCADE, null=True, blank=True)
+    nxt = models.ForeignKey("Level", on_delete=models.CASCADE, null=True, blank=True, related_name="next_level")
     has_next = models.BooleanField(default=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE)
     first_level = models.BooleanField(default=False)
